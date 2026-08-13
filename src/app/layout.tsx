@@ -13,6 +13,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport: import("next").Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "Comprar Honda Motos | Concesionario Oficial",
   description: "Encuentra tu próxima motocicleta con nosotros. Servicio técnico especializado, repuestos originales, y la mejor asesoría en Bogotá, Cundinamarca y Boyacá.",

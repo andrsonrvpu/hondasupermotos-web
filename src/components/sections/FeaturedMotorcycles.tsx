@@ -29,7 +29,7 @@ export function FeaturedMotorcycles() {
           <span className="text-[var(--honda-red)] text-sm font-bold uppercase tracking-widest block mb-2">
             Ofertas Exclusivas
           </span>
-          <h2 className="text-3xl md:text-5xl font-black uppercase text-gray-900 tracking-tighter italic">
+          <h2 className="text-2xl md:text-5xl font-black uppercase text-gray-900 tracking-tighter italic">
             Nuestras motocicletas <span className="text-[var(--honda-red)]">más vendidas</span>
           </h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">

@@ -21,7 +21,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
       </div>
 
-      <div className="container relative z-10 mx-auto px-4 md:px-6 lg:px-8 py-20 text-left">
+      <div className="container relative z-10 mx-auto px-4 md:px-6 lg:px-8 py-10 md:py-20 text-left">
         <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -39,7 +39,7 @@ export function Hero() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 italic leading-none drop-shadow-lg"
+            className="text-4xl sm:text-5xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 italic leading-none drop-shadow-lg"
           >
             El poder de <br />
             <span className="text-[var(--honda-red)] drop-shadow-md">tus sueños</span>
@@ -80,7 +80,7 @@ export function Hero() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="flex flex-wrap gap-8 justify-start pt-8 mt-12 border-t border-gray-400/30"
+            className="flex flex-wrap gap-4 sm:gap-8 justify-start pt-8 mt-8 sm:mt-12 border-t border-gray-400/30"
           >
             <div>
               <div className="text-3xl font-black text-white drop-shadow-md">75+</div>

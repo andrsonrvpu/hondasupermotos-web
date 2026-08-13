@@ -57,7 +57,7 @@ export function Header() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white",
-        isScrolled ? "shadow-md py-2" : "py-4"
+        isScrolled ? "shadow-md py-2" : "py-3 md:py-4"
       )}
     >
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
@@ -69,7 +69,7 @@ export function Header() {
               alt="Honda Logo" 
               width={180} 
               height={45} 
-              className="object-contain transition-transform duration-300 group-hover:scale-105"
+              className="w-[130px] sm:w-[150px] md:w-[180px] h-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
 

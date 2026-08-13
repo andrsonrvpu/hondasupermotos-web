@@ -9,7 +9,7 @@ export function Services() {
           <span className="text-[var(--honda-red)] text-sm font-bold uppercase tracking-widest block mb-2">
             Talleres
           </span>
-          <h2 className="text-3xl md:text-5xl font-black uppercase text-gray-900 tracking-tighter italic">
+          <h2 className="text-2xl md:text-5xl font-black uppercase text-gray-900 tracking-tighter italic">
             Nuestros <span className="text-[var(--honda-red)]">Servicios</span>
           </h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
@@ -24,7 +24,7 @@ export function Services() {
             return (
               <div 
                 key={service.id} 
-                className="group bg-white border border-gray-100 rounded-2xl p-8 hover:shadow-2xl hover:shadow-red-600/30 transition-all duration-300 hover:-translate-y-2 hover:border-[var(--honda-red)]"
+                className="group bg-white border border-gray-100 rounded-2xl p-6 md:p-8 hover:shadow-2xl hover:shadow-red-600/30 transition-all duration-300 hover:-translate-y-2 hover:border-[var(--honda-red)]"
               >
                 <div className="w-14 h-14 bg-red-50 text-[var(--honda-red)] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Icon className="w-7 h-7" />
