@@ -44,13 +44,13 @@ export function Footer() {
               Tu concesionario de confianza. Encuentra la moto de tus sueños con la mejor asesoría y servicio técnico especializado.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 bg-gray-100 text-gray-600 hover:bg-[var(--honda-red)] hover:text-white rounded-full flex items-center justify-center transition-colors">
+              <a href="#" className="w-10 h-10 bg-gray-100 text-gray-600 hover:bg-[var(--honda-red)] hover:text-white active:bg-[var(--honda-red)] active:text-white rounded-full flex items-center justify-center transition-colors">
                 <Globe className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-100 text-gray-600 hover:bg-[var(--honda-red)] hover:text-white rounded-full flex items-center justify-center transition-colors">
+              <a href="#" className="w-10 h-10 bg-gray-100 text-gray-600 hover:bg-[var(--honda-red)] hover:text-white active:bg-[var(--honda-red)] active:text-white rounded-full flex items-center justify-center transition-colors">
                 <Camera className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-100 text-gray-600 hover:bg-[var(--honda-red)] hover:text-white rounded-full flex items-center justify-center transition-colors">
+              <a href="#" className="w-10 h-10 bg-gray-100 text-gray-600 hover:bg-[var(--honda-red)] hover:text-white active:bg-[var(--honda-red)] active:text-white rounded-full flex items-center justify-center transition-colors">
                 <Video className="w-5 h-5" />
               </a>
             </div>
@@ -69,7 +69,7 @@ export function Footer() {
                   <Link 
                     href={link.href} 
                     onClick={(e) => handleHashClick(e, link.href)}
-                    className="text-gray-600 hover:text-[var(--honda-red)] transition-colors font-medium"
+                    className="text-gray-600 hover:text-[var(--honda-red)] active:text-[var(--honda-red)] transition-colors font-medium"
                   >
                     {link.label}
                   </Link>
@@ -93,7 +93,7 @@ export function Footer() {
                   <Link 
                     href={link.href} 
                     onClick={(e) => handleHashClick(e, link.href)}
-                    className="text-gray-600 hover:text-[var(--honda-red)] transition-colors font-medium"
+                    className="text-gray-600 hover:text-[var(--honda-red)] active:text-[var(--honda-red)] transition-colors font-medium"
                   >
                     {link.label}
                   </Link>
@@ -115,11 +115,11 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 text-gray-600">
                 <Phone className="w-5 h-5 text-[var(--honda-red)] shrink-0" />
-                <a href="https://wa.me/573173057943" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--honda-red)]">WhatsApp: +57 317 305 7943</a>
+                <a href="https://wa.me/573173057943" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--honda-red)] active:text-[var(--honda-red)] transition-colors">WhatsApp: +57 317 305 7943</a>
               </li>
               <li className="flex items-center gap-3 text-gray-600">
                 <Mail className="w-5 h-5 text-[var(--honda-red)] shrink-0" />
-                <a href="mailto:info@honda.com" className="hover:text-[var(--honda-red)]">info@honda.com</a>
+                <a href="mailto:info@honda.com" className="hover:text-[var(--honda-red)] active:text-[var(--honda-red)] transition-colors">info@honda.com</a>
               </li>
             </ul>
           </div>
@@ -136,8 +136,8 @@ export function Footer() {
         <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500 font-medium">
           <p>© 2026 Honda. Todos los derechos reservados.</p>
           <div className="flex gap-6">
-            <Link href="/politica-de-privacidad" className="hover:text-[var(--honda-red)]">Política de Privacidad</Link>
-            <Link href="/terminos-y-condiciones" className="hover:text-[var(--honda-red)]">Términos y Condiciones</Link>
+            <Link href="/politica-de-privacidad" className="hover:text-[var(--honda-red)] active:text-[var(--honda-red)] transition-colors">Política de Privacidad</Link>
+            <Link href="/terminos-y-condiciones" className="hover:text-[var(--honda-red)] active:text-[var(--honda-red)] transition-colors">Términos y Condiciones</Link>
           </div>
         </div>
       </div>
