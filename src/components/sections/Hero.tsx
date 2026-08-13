@@ -39,7 +39,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/40 rounded-full px-4 py-1.5 md:px-5 md:py-2 mb-auto md:mb-6 mx-auto md:mx-0"
+            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/40 rounded-full px-4 py-1.5 md:px-5 md:py-2 mb-12 md:mb-6 mx-auto md:mx-0"
           >
             <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-[var(--honda-red)] rounded-full animate-pulse"></span>
             <span className="text-white text-[11px] md:text-xs font-bold uppercase tracking-wider">
@@ -52,7 +52,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-black text-white uppercase tracking-tighter mb-4 md:mb-4 mt-6 md:mt-0 italic leading-[0.9] md:leading-[0.9] drop-shadow-xl text-center md:text-left text-[2.8rem] sm:text-5xl md:text-7xl w-full"
+            className="font-black text-white uppercase tracking-tighter mb-8 md:mb-4 italic leading-[0.9] md:leading-[0.9] drop-shadow-xl text-center md:text-left text-[2.8rem] sm:text-5xl md:text-7xl w-full"
           >
             <span className="drop-shadow-md">EL PODER DE</span><br />
             <span className="relative inline-block mt-1">
@@ -66,7 +66,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-[15px] leading-snug md:text-lg md:leading-relaxed text-gray-100 mb-8 md:mb-10 w-full font-medium drop-shadow-md text-center md:text-left mx-auto md:mx-0"
+            className="text-[15px] leading-snug md:text-lg md:leading-relaxed text-gray-100 mb-10 md:mb-10 w-full font-medium drop-shadow-md text-center md:text-left mx-auto md:mx-0"
           >
             Descubre las motocicletas Honda más<br className="hidden sm:block"/> innovadoras de 2027. Diseño, tecnología y<br className="hidden sm:block"/> rendimiento en perfecta armonía.
           </motion.p>
@@ -96,7 +96,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.35 }}
-            className="w-full h-px bg-white/20 mt-auto mb-6 md:my-8 max-w-[350px] md:max-w-none mx-auto md:mx-0"
+            className="w-full h-px bg-white/20 mt-10 mb-8 md:my-8 max-w-[350px] md:max-w-none mx-auto md:mx-0"
           />
 
           {/* Stats */}
@@ -117,7 +117,6 @@ export function Hero() {
             <div className="flex flex-col items-center md:items-start col-span-2 md:col-span-1 mt-2 md:mt-0">
               <div className="text-3xl md:text-4xl font-black text-white drop-shadow-md">#1</div>
               <div className="text-[10px] md:text-xs text-gray-300 uppercase tracking-widest font-medium mt-1">Del mundo</div>
-              <div className="mt-3 px-5 py-1.5 rounded-full border border-white/30 text-[10px] md:text-xs text-gray-300 tracking-widest font-medium">honsupermotos.com</div>
             </div>
           </motion.div>
         </div>
