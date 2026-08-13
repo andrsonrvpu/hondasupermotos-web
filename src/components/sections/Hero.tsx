@@ -32,7 +32,7 @@ export function Hero() {
       </div>
 
       <div className="container relative z-10 mx-auto px-[18px] md:px-6 lg:px-8 flex flex-col items-center md:items-start text-center md:text-left h-full">
-        <div className="w-full max-w-[350px] md:max-w-3xl flex flex-col items-center md:items-start mx-auto md:mx-0 h-full pt-2 md:pt-0">
+        <div className="w-full max-w-[350px] md:max-w-3xl flex flex-col items-center md:items-start mx-auto md:mx-0 h-full pt-4 md:pt-0">
           
           {/* Badge */}
           <motion.div
@@ -52,7 +52,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-black text-white uppercase tracking-tighter mb-4 md:mb-4 mt-8 md:mt-0 italic leading-[0.9] md:leading-[0.9] drop-shadow-xl text-center md:text-left text-[2.8rem] sm:text-5xl md:text-7xl w-full"
+            className="font-black text-white uppercase tracking-tighter mb-4 md:mb-4 mt-6 md:mt-0 italic leading-[0.9] md:leading-[0.9] drop-shadow-xl text-center md:text-left text-[2.8rem] sm:text-5xl md:text-7xl w-full"
           >
             <span className="drop-shadow-md">EL PODER DE</span><br />
             <span className="relative inline-block mt-1">
@@ -96,7 +96,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.35 }}
-            className="w-full h-px bg-white/20 my-6 md:my-8 max-w-[350px] md:max-w-none mx-auto md:mx-0"
+            className="w-full h-px bg-white/20 mt-auto mb-6 md:my-8 max-w-[350px] md:max-w-none mx-auto md:mx-0"
           />
 
           {/* Stats */}
@@ -104,7 +104,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-4 w-full mx-auto md:mx-0 text-center md:text-left"
+            className="grid grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-4 w-full mx-auto md:mx-0 text-center md:text-left pb-4 md:pb-0"
           >
             <div className="flex flex-col items-center md:items-start col-span-1">
               <div className="text-3xl md:text-4xl font-black text-white drop-shadow-md">75+</div>
@@ -114,9 +114,10 @@ export function Hero() {
               <div className="text-3xl md:text-4xl font-black text-white drop-shadow-md">400M+</div>
               <div className="text-[10px] md:text-xs text-gray-300 uppercase tracking-widest font-medium mt-1">Motos vendidas</div>
             </div>
-            <div className="flex flex-col items-center md:items-start col-span-2 md:col-span-1 mt-2 md:mt-0 pb-6 md:pb-0">
+            <div className="flex flex-col items-center md:items-start col-span-2 md:col-span-1 mt-2 md:mt-0">
               <div className="text-3xl md:text-4xl font-black text-white drop-shadow-md">#1</div>
-              <div className="mt-2 px-5 py-1.5 rounded-full border border-white/30 text-[10px] md:text-xs text-gray-300 tracking-widest font-medium">honsupermotos.com</div>
+              <div className="text-[10px] md:text-xs text-gray-300 uppercase tracking-widest font-medium mt-1">Del mundo</div>
+              <div className="mt-3 px-5 py-1.5 rounded-full border border-white/30 text-[10px] md:text-xs text-gray-300 tracking-widest font-medium">honsupermotos.com</div>
             </div>
           </motion.div>
         </div>
