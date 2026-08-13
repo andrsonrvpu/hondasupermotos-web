@@ -72,7 +72,7 @@ export function MotosCatalog() {
   return (
     <div className="min-h-screen bg-gray-50/50 pb-20">
       {/* Hero Section */}
-      <div className="bg-white border-b border-gray-100 pt-32 pb-12 md:pt-40 md:pb-20 relative z-0">
+      <div className="bg-white border-b border-gray-100 pt-24 pb-12 md:pt-32 md:pb-20 relative z-0">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-black uppercase mb-6 tracking-tighter italic leading-none">
