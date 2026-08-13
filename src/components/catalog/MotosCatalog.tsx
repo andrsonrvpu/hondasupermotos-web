@@ -194,7 +194,7 @@ export function MotosCatalog() {
                     window.scrollTo({ top: 400, behavior: 'smooth' });
                   }}
                   disabled={currentPage === 1}
-                  className="w-12 h-10 flex items-center justify-center rounded-md border border-gray-200 bg-white text-gray-500 disabled:bg-gray-200/60 disabled:text-gray-400 hover:bg-white hover:text-[#cc0000] hover:border-[#cc0000] hover:-translate-y-1 hover:shadow-[0_8px_16px_rgba(204,0,0,0.2)] transition-all shadow-sm cursor-pointer disabled:cursor-default"
+                  className="w-12 h-10 flex items-center justify-center rounded-md border border-gray-200 bg-white text-gray-500 disabled:bg-gray-200/60 disabled:text-gray-400 hover:bg-white hover:text-[#cc0000] hover:border-[#cc0000] hover:-translate-y-1 hover:shadow-[0_8px_16px_rgba(204,0,0,0.2)] active:bg-white active:text-[#cc0000] active:border-[#cc0000] active:-translate-y-1 active:shadow-[0_8px_16px_rgba(204,0,0,0.2)] transition-all shadow-sm cursor-pointer disabled:cursor-default disabled:active:translate-y-0 disabled:active:shadow-none disabled:active:border-gray-200 disabled:active:text-gray-400"
                   aria-label="Página anterior"
                 >
                   <ChevronLeft className="w-5 h-5" />
@@ -209,8 +209,8 @@ export function MotosCatalog() {
                     }}
                     className={`w-10 h-10 flex items-center justify-center rounded-md font-bold transition-all shadow-sm cursor-pointer ${
                       currentPage === page 
-                        ? "bg-[#cc0000] text-white shadow-[0_4px_10px_rgba(204,0,0,0.3)] hover:-translate-y-1" 
-                        : "bg-white text-gray-700 border border-gray-200 hover:bg-white hover:text-[#cc0000] hover:border-[#cc0000] hover:-translate-y-1 hover:shadow-[0_8px_16px_rgba(204,0,0,0.2)]"
+                        ? "bg-[#cc0000] text-white shadow-[0_4px_10px_rgba(204,0,0,0.3)] hover:-translate-y-1 active:-translate-y-1" 
+                        : "bg-white text-gray-700 border border-gray-200 hover:bg-white hover:text-[#cc0000] hover:border-[#cc0000] hover:-translate-y-1 hover:shadow-[0_8px_16px_rgba(204,0,0,0.2)] active:bg-white active:text-[#cc0000] active:border-[#cc0000] active:-translate-y-1 active:shadow-[0_8px_16px_rgba(204,0,0,0.2)]"
                     }`}
                   >
                     {page}
@@ -223,7 +223,7 @@ export function MotosCatalog() {
                     window.scrollTo({ top: 400, behavior: 'smooth' });
                   }}
                   disabled={currentPage === totalPages}
-                  className="w-12 h-10 flex items-center justify-center rounded-md border border-gray-200 bg-white text-gray-500 disabled:bg-gray-200/60 disabled:text-gray-400 hover:bg-white hover:text-[#cc0000] hover:border-[#cc0000] hover:-translate-y-1 hover:shadow-[0_8px_16px_rgba(204,0,0,0.2)] transition-all shadow-sm cursor-pointer disabled:cursor-default"
+                  className="w-12 h-10 flex items-center justify-center rounded-md border border-gray-200 bg-white text-gray-500 disabled:bg-gray-200/60 disabled:text-gray-400 hover:bg-white hover:text-[#cc0000] hover:border-[#cc0000] hover:-translate-y-1 hover:shadow-[0_8px_16px_rgba(204,0,0,0.2)] active:bg-white active:text-[#cc0000] active:border-[#cc0000] active:-translate-y-1 active:shadow-[0_8px_16px_rgba(204,0,0,0.2)] transition-all shadow-sm cursor-pointer disabled:cursor-default disabled:active:translate-y-0 disabled:active:shadow-none disabled:active:border-gray-200 disabled:active:text-gray-400"
                   aria-label="Página siguiente"
                 >
                   <ChevronRight className="w-5 h-5" />
