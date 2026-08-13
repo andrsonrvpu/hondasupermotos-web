@@ -32,18 +32,18 @@ export function Hero() {
       </div>
 
       <div className="container relative z-10 mx-auto px-[18px] md:px-6 lg:px-8 flex flex-col items-center md:items-start text-center md:text-left h-full">
-        <div className="w-full max-w-[350px] md:max-w-3xl flex flex-col items-center md:items-start mx-auto md:mx-0 h-full">
+        <div className="w-full max-w-[350px] md:max-w-3xl flex flex-col items-center md:items-start mx-auto md:mx-0 h-full pt-2 md:pt-0">
           
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 md:px-5 md:py-2 mb-auto md:mb-6 mt-2 md:mt-0 mx-auto md:mx-0"
+            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/40 rounded-full px-4 py-1.5 md:px-5 md:py-2 mb-auto md:mb-6 mx-auto md:mx-0"
           >
             <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-[var(--honda-red)] rounded-full animate-pulse"></span>
-            <span className="text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.15em]">
-              CONCESIONARIO HONDA
+            <span className="text-white text-[11px] md:text-xs font-bold uppercase tracking-wider">
+              CONCESIONARIO OFICIAL HONDA
             </span>
           </motion.div>
 
@@ -52,11 +52,13 @@ export function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-black text-white uppercase tracking-tighter mb-5 md:mb-4 mt-12 md:mt-0 italic leading-[1.1] drop-shadow-lg text-center md:text-left"
-            style={{ fontSize: "clamp(2.5rem, 10vw, 4.5rem)" }}
+            className="font-black text-white uppercase tracking-tighter mb-4 md:mb-4 mt-8 md:mt-0 italic leading-[0.9] md:leading-[0.9] drop-shadow-xl text-center md:text-left text-[2.8rem] sm:text-5xl md:text-7xl w-full"
           >
-            EL PODER DE<br />
-            <span className="text-[var(--honda-red)] drop-shadow-md">TUS SUEÑOS</span>
+            <span className="drop-shadow-md">EL PODER DE</span><br />
+            <span className="relative inline-block mt-1">
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-black/80 to-transparent blur-md -mx-8"></span>
+              <span className="relative text-[var(--honda-red)] drop-shadow-[0_2px_10px_rgba(204,0,0,0.5)] z-10">TUS SUEÑOS</span>
+            </span>
           </motion.h1>
 
           {/* Description */}
@@ -64,9 +66,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-[13px] leading-snug md:text-lg md:leading-relaxed text-gray-200 mb-8 md:mb-10 w-full max-w-[340px] md:max-w-lg font-medium drop-shadow-md line-clamp-3 md:line-clamp-none text-center md:text-left mx-auto md:mx-0"
+            className="text-[15px] leading-snug md:text-lg md:leading-relaxed text-gray-100 mb-8 md:mb-10 w-full font-medium drop-shadow-md text-center md:text-left mx-auto md:mx-0"
           >
-            Descubre las motocicletas Honda más innovadoras de 2027. Diseño, tecnología y rendimiento en perfecta armonía.
+            Descubre las motocicletas Honda más<br className="hidden sm:block"/> innovadoras de 2027. Diseño, tecnología y<br className="hidden sm:block"/> rendimiento en perfecta armonía.
           </motion.p>
 
           {/* Buttons */}
@@ -74,39 +76,47 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-[10px] md:gap-4 mb-6 md:mb-0 w-full max-w-[350px] md:max-w-none mx-auto md:mx-0"
+            className="flex flex-col sm:flex-row w-full items-center justify-center md:justify-start gap-4 md:gap-4 mx-auto md:mx-0"
           >
             <Button 
-              className="w-full sm:w-auto h-[48px] md:h-[52px] px-6 uppercase tracking-wide rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(204,0,0,0.6)] cursor-pointer active:scale-95 text-[13px] md:text-sm font-bold"
+              className="w-full h-[56px] md:h-[60px] rounded-[28px] transition-all duration-300 hover:shadow-[0_0_30px_rgba(204,0,0,0.6)] cursor-pointer active:scale-95 text-[17px] md:text-lg font-bold bg-[#cc0000] hover:bg-[#a30000] text-white"
               onClick={() => window.location.href = '/motos'}
             >
-              Ver Modelos <span className="ml-2">→</span>
+              Ver Modelos <span className="ml-2 font-normal">→</span>
             </Button>
           
             <WhatsAppButton 
-              className="w-full sm:w-auto h-[48px] md:h-[52px] px-6 uppercase tracking-wide bg-transparent border-2 border-white hover:bg-white hover:text-[#25D366] rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.6)] active:scale-95 text-[13px] md:text-sm font-bold flex items-center justify-center" 
+              className="w-full h-[56px] md:h-[60px] bg-transparent border-[1.5px] border-white hover:bg-white hover:text-[#25D366] rounded-[28px] transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.6)] active:scale-95 text-[17px] md:text-lg font-bold flex items-center justify-center !text-white hover:!text-[#25D366]" 
               message="Hola, vengo de la página web y me gustaría recibir información general."
             />
           </motion.div>
 
-          {/* Inline Stats */}
+          {/* Divider */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="w-full h-px bg-white/20 my-6 md:my-8 max-w-[350px] md:max-w-none mx-auto md:mx-0"
+          />
+
+          {/* Stats */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-3 gap-2 sm:gap-8 pt-5 md:pt-8 mt-2 md:mt-12 border-t border-gray-400/30 w-full max-w-[350px] md:max-w-none mx-auto md:mx-0 text-center md:text-left"
+            className="grid grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-4 w-full mx-auto md:mx-0 text-center md:text-left"
           >
-            <div className="flex flex-col items-center md:items-start">
-              <div className="text-2xl md:text-3xl font-black text-white drop-shadow-md">75+</div>
-              <div className="text-[9px] md:text-xs text-white/80 uppercase tracking-wider font-bold mt-0.5 md:mt-1">Años<br className="md:hidden"/> Historia</div>
+            <div className="flex flex-col items-center md:items-start col-span-1">
+              <div className="text-3xl md:text-4xl font-black text-white drop-shadow-md">75+</div>
+              <div className="text-[10px] md:text-xs text-gray-300 uppercase tracking-widest font-medium mt-1">Años de historia</div>
             </div>
-            <div className="flex flex-col items-center md:items-start">
-              <div className="text-2xl md:text-3xl font-black text-white drop-shadow-md">400M+</div>
-              <div className="text-[9px] md:text-xs text-white/80 uppercase tracking-wider font-bold mt-0.5 md:mt-1">Motos<br className="md:hidden"/> Vendidas</div>
+            <div className="flex flex-col items-center md:items-start col-span-1">
+              <div className="text-3xl md:text-4xl font-black text-white drop-shadow-md">400M+</div>
+              <div className="text-[10px] md:text-xs text-gray-300 uppercase tracking-widest font-medium mt-1">Motos vendidas</div>
             </div>
-            <div className="flex flex-col items-center md:items-start">
-              <div className="text-2xl md:text-3xl font-black text-white drop-shadow-md">#1</div>
-              <div className="text-[9px] md:text-xs text-white/80 uppercase tracking-wider font-bold mt-0.5 md:mt-1">En El<br className="md:hidden"/> Mundo</div>
+            <div className="flex flex-col items-center md:items-start col-span-2 md:col-span-1 mt-2 md:mt-0 pb-6 md:pb-0">
+              <div className="text-3xl md:text-4xl font-black text-white drop-shadow-md">#1</div>
+              <div className="mt-2 px-5 py-1.5 rounded-full border border-white/30 text-[10px] md:text-xs text-gray-300 tracking-widest font-medium">honsupermotos.com</div>
             </div>
           </motion.div>
         </div>
