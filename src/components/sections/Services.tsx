@@ -57,10 +57,10 @@ export function Services() {
                   href={`https://wa.me/573173057943?text=${encodeURIComponent(service.whatsappMessage)}`} 
                   target="_blank" 
                   rel="noreferrer"
-                  className="inline-flex items-center text-sm font-bold text-[var(--honda-red)] hover:text-[var(--honda-red-hover)] uppercase tracking-wider"
+                  className="inline-flex items-center text-sm font-bold text-[var(--honda-red)] hover:text-[var(--honda-red-hover)] active:text-[var(--honda-red-hover)] uppercase tracking-wider"
                 >
                   {service.ctaText}
-                  <Icons.ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <Icons.ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 group-active:translate-x-1 transition-transform" />
                 </a>
               </motion.div>
             )
