@@ -52,10 +52,17 @@ export function FeaturedMotorcycles() {
             className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 -mb-8 pt-4 -mt-4 scroll-smooth hide-scrollbar"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
-            {getFeaturedMotorcycles().map((moto) => (
-              <div key={moto.id} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start">
+            {getFeaturedMotorcycles().map((moto, index) => (
+              <motion.div 
+                key={moto.id} 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start"
+              >
                 <MotorcycleCard motorcycle={moto} />
-              </div>
+              </motion.div>
             ))}
           </div>
 

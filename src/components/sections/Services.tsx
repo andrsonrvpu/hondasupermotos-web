@@ -1,5 +1,7 @@
+"use client"
 import { services } from "@/data/mockData"
 import * as Icons from "lucide-react"
+import { motion } from "framer-motion"
 
 export function Services() {
   return (
@@ -18,13 +20,17 @@ export function Services() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {services.map((service) => {
+          {services.map((service, index) => {
             const Icon = Icons[service.icon as keyof typeof Icons] as React.ElementType
 
             return (
-              <div 
+              <motion.div 
                 key={service.id} 
-                className="group bg-white border border-gray-100 rounded-2xl p-6 md:p-8 hover:shadow-2xl hover:shadow-red-600/30 transition-all duration-300 hover:-translate-y-2 hover:border-[var(--honda-red)]"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group bg-white border border-gray-100 rounded-2xl p-6 md:p-8 hover:shadow-2xl hover:shadow-red-600/30 transition-all duration-300 hover:-translate-y-2 hover:border-[var(--honda-red)] active:scale-[0.98] cursor-pointer"
               >
                 <div className="w-14 h-14 bg-red-50 text-[var(--honda-red)] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Icon className="w-7 h-7" />
@@ -56,7 +62,7 @@ export function Services() {
                   {service.ctaText}
                   <Icons.ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </a>
-              </div>
+              </motion.div>
             )
           })}
         </div>

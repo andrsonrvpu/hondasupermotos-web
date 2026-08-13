@@ -15,7 +15,7 @@ export function MotorcycleCard({ motorcycle, className }: MotorcycleCardProps) {
     <div className="group relative block w-full">
       <div
         className={cn(
-          "relative flex flex-col h-full bg-white border border-gray-100 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-red-600/30 hover:-translate-y-2 hover:border-[var(--honda-red)]",
+          "relative flex flex-col h-full bg-white border border-gray-100 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-red-600/30 hover:-translate-y-2 hover:border-[var(--honda-red)] active:scale-[0.98] active:shadow-xl active:border-[var(--honda-red)]",
           className
         )}
       >
@@ -42,7 +42,7 @@ export function MotorcycleCard({ motorcycle, className }: MotorcycleCardProps) {
 
         {/* Image Container */}
         <div className="relative w-full aspect-[4/3] bg-gray-50 flex items-center justify-center p-6 mt-4">
-          <div className="relative w-full h-full transition-all duration-500 group-hover:scale-[1.35] group-hover:-translate-y-2 group-hover:drop-shadow-[0_20px_20px_rgba(0,0,0,0.3)] z-20">
+          <div className="relative w-full h-full transition-all duration-500 group-hover:scale-[1.35] group-hover:-translate-y-2 group-hover:drop-shadow-[0_20px_20px_rgba(0,0,0,0.3)] group-active:scale-[1.15] group-active:-translate-y-1 z-20">
             <Image
               src={motorcycle.image}
               alt={motorcycle.name}
@@ -53,8 +53,8 @@ export function MotorcycleCard({ motorcycle, className }: MotorcycleCardProps) {
           </div>
           
           {/* Hover "Ver Detalles" Pill */}
-          <div className="absolute inset-0 z-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
-            <span className="bg-white/90 backdrop-blur-sm text-[var(--honda-red)] text-sm font-bold px-6 py-2.5 rounded-full shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+          <div className="absolute inset-0 z-30 flex items-center justify-center opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-all duration-300 pointer-events-none">
+            <span className="bg-white/90 backdrop-blur-sm text-[var(--honda-red)] text-sm font-bold px-6 py-2.5 rounded-full shadow-xl transform translate-y-4 group-hover:translate-y-0 group-active:translate-y-0 transition-all duration-300">
               Ver Detalles
             </span>
           </div>
@@ -96,7 +96,7 @@ export function MotorcycleCard({ motorcycle, className }: MotorcycleCardProps) {
                 const whatsappUrl = `https://wa.me/573173057943?text=${encodeURIComponent(motorcycle.whatsappMessage || `Hola! Me interesa la ${motorcycle.name}`)}`;
                 window.open(whatsappUrl, '_blank');
               }}
-              className="flex-1 flex items-center justify-center bg-[#25D366] text-white text-center font-bold uppercase text-sm py-3 px-4 rounded-lg transition-all duration-300 hover:bg-[#1DA851] hover:-translate-y-1 hover:shadow-[0_8px_16px_rgba(37,211,102,0.4)] cursor-pointer"
+              className="flex-1 flex items-center justify-center bg-[#25D366] text-white text-center font-bold uppercase text-sm py-3 px-4 rounded-lg transition-all duration-300 hover:bg-[#1DA851] hover:-translate-y-1 hover:shadow-[0_8px_16px_rgba(37,211,102,0.4)] active:scale-95 active:bg-[#158c40] cursor-pointer"
             >
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
