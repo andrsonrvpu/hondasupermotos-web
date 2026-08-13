@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 
 export function Hero() {
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-start overflow-hidden bg-gray-900 mt-[72px]">
+    <section className="relative w-full min-h-[75vh] md:min-h-[90vh] lg:min-h-screen flex items-center justify-start overflow-hidden bg-gray-900 mt-[72px]">
       {/* Background Image / Overlay (Ready for video) */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Image
@@ -27,7 +27,7 @@ export function Hero() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 mb-6"
+            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 md:px-5 md:py-2 mb-4 md:mb-6"
           >
             <span className="w-2 h-2 bg-[var(--honda-red)] rounded-full animate-pulse"></span>
             <span className="text-white text-xs font-bold uppercase tracking-[0.15em]">
@@ -39,7 +39,7 @@ export function Hero() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl sm:text-5xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 italic leading-none drop-shadow-lg"
+            className="text-4xl sm:text-5xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-3 md:mb-4 italic leading-none drop-shadow-lg"
           >
             El poder de <br />
             <span className="text-[var(--honda-red)] drop-shadow-md">tus sueños</span>
@@ -49,7 +49,7 @@ export function Hero() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-base md:text-lg text-gray-200 mb-10 max-w-lg font-medium leading-relaxed drop-shadow-md"
+            className="text-sm md:text-lg text-gray-200 mb-6 md:mb-10 max-w-lg font-medium leading-relaxed drop-shadow-md"
           >
             Descubre las motocicletas Honda más innovadoras de 2027. Diseño, tecnología y rendimiento en perfecta armonía.
           </motion.p>
@@ -80,7 +80,7 @@ export function Hero() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="flex flex-wrap gap-4 sm:gap-8 justify-start pt-8 mt-8 sm:mt-12 border-t border-gray-400/30"
+            className="flex flex-wrap gap-4 sm:gap-8 justify-start pt-6 mt-6 md:pt-8 md:mt-12 border-t border-gray-400/30"
           >
             <div>
               <div className="text-3xl font-black text-white drop-shadow-md">75+</div>
