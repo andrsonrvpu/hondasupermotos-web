@@ -2,15 +2,34 @@
 
 import { testimonials } from "@/data/mockData"
 import { Star, ChevronLeft, ChevronRight } from "lucide-react"
-import { useRef } from "react"
-
+import { useRef, useState } from "react"
 export function Testimonials() {
   const scrollRef = useRef<HTMLDivElement>(null)
+  const [activeIndex, setActiveIndex] = useState(0)
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return
+    const { scrollLeft, scrollWidth } = scrollRef.current
+    const itemWidth = scrollWidth / testimonials.length
+    const newIndex = Math.round(scrollLeft / itemWidth)
+    if (newIndex !== activeIndex) {
+      setActiveIndex(newIndex)
+    }
+  }
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
-      const scrollAmount = direction === 'left' ? -scrollRef.current.clientWidth : scrollRef.current.clientWidth
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
+      const itemWidth = scrollRef.current.scrollWidth / testimonials.length
+      const currentScroll = scrollRef.current.scrollLeft
+      const currentIndex = Math.round(currentScroll / itemWidth)
+      
+      const visibleItems = Math.round(scrollRef.current.clientWidth / itemWidth) || 1
+      let nextIndex = direction === 'left' ? currentIndex - visibleItems : currentIndex + visibleItems
+      
+      if (nextIndex < 0) nextIndex = 0
+      if (nextIndex >= testimonials.length) nextIndex = testimonials.length - 1
+      
+      scrollRef.current.scrollTo({ left: itemWidth * nextIndex, behavior: 'smooth' })
     }
   }
 
@@ -33,21 +52,22 @@ export function Testimonials() {
           {/* Left Button */}
           <button 
             onClick={() => scroll('left')}
-            className="absolute -left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-50 bg-white border border-gray-200 text-gray-800 p-3 rounded-full shadow-lg hover:bg-[var(--honda-red)] hover:text-white hover:border-[var(--honda-red)] transition-all opacity-0 group-hover:opacity-100 hidden md:flex hover:scale-110 active:scale-95 cursor-pointer"
+            className="absolute left-0 md:-left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-50 bg-white border border-gray-200 text-gray-800 p-3 md:p-4 rounded-full shadow-lg hover:bg-[var(--honda-red)] hover:text-white hover:border-[var(--honda-red)] hover:shadow-[0_0_30px_rgba(204,0,0,0.6)] active:bg-[var(--honda-red)] active:text-white active:border-[var(--honda-red)] active:shadow-[0_0_30px_rgba(204,0,0,0.6)] transition-all opacity-90 md:opacity-0 md:group-hover:opacity-100 flex hover:scale-110 active:scale-95 cursor-pointer"
             aria-label="Anterior"
           >
-            <ChevronLeft size={24} />
+            <ChevronLeft size={24} className="w-6 h-6 md:w-7 md:h-7" />
           </button>
 
           <div 
             ref={scrollRef}
+            onScroll={handleScroll}
             className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 -mb-8 pt-4 -mt-4 scroll-smooth hide-scrollbar"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {testimonials.map((testimonial) => (
               <div 
                 key={testimonial.id}
-                className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start flex flex-col items-center text-center bg-gray-50 rounded-2xl p-8 border border-gray-100 h-full"
+                className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start flex flex-col items-center text-center bg-gray-50 rounded-2xl p-8 border border-gray-100 h-full transition-all duration-300 hover:shadow-2xl hover:shadow-red-600/30 hover:-translate-y-2 hover:border-[var(--honda-red)] active:shadow-2xl active:shadow-red-600/30 active:-translate-y-2 active:border-[var(--honda-red)] cursor-pointer"
               >
                 <div className="flex bg-[var(--honda-red)] text-white p-2 rounded-full mb-4 shrink-0">
                   <Star className="w-6 h-6 fill-current" />
@@ -74,11 +94,32 @@ export function Testimonials() {
           {/* Right Button */}
           <button 
             onClick={() => scroll('right')}
-            className="absolute -right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-50 bg-white border border-gray-200 text-gray-800 p-3 rounded-full shadow-lg hover:bg-[var(--honda-red)] hover:text-white hover:border-[var(--honda-red)] transition-all opacity-0 group-hover:opacity-100 hidden md:flex hover:scale-110 active:scale-95 cursor-pointer"
+            className="absolute right-0 md:-right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-50 bg-white border border-gray-200 text-gray-800 p-3 md:p-4 rounded-full shadow-lg hover:bg-[var(--honda-red)] hover:text-white hover:border-[var(--honda-red)] hover:shadow-[0_0_30px_rgba(204,0,0,0.6)] active:bg-[var(--honda-red)] active:text-white active:border-[var(--honda-red)] active:shadow-[0_0_30px_rgba(204,0,0,0.6)] transition-all opacity-90 md:opacity-0 md:group-hover:opacity-100 flex hover:scale-110 active:scale-95 cursor-pointer"
             aria-label="Siguiente"
           >
-            <ChevronRight size={24} />
+            <ChevronRight size={24} className="w-6 h-6 md:w-7 md:h-7" />
           </button>
+        </div>
+
+        {/* Mobile Pagination Dots */}
+        <div className="flex md:hidden justify-center items-center gap-2 mt-10">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                if (scrollRef.current) {
+                  const itemWidth = scrollRef.current.scrollWidth / testimonials.length
+                  scrollRef.current.scrollTo({ left: itemWidth * index, behavior: 'smooth' })
+                }
+              }}
+              aria-label={`Ir al testimonio ${index + 1}`}
+              className={`h-2.5 rounded-full transition-all duration-300 ${
+                activeIndex === index 
+                  ? "w-8 bg-[var(--honda-red)]" 
+                  : "w-2.5 bg-gray-300 active:bg-gray-400"
+              }`}
+            />
+          ))}
         </div>
       </div>
     </section>
