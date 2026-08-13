@@ -26,12 +26,12 @@ export function WhatsAppButton({
       rel="noopener noreferrer"
       className={cn(
         "inline-flex items-center justify-center font-bold text-white transition-all cursor-pointer",
-        "bg-[var(--whatsapp-green)] hover:bg-[var(--whatsapp-green-hover)]",
+        "bg-[var(--whatsapp-green)] hover:bg-[var(--whatsapp-green-hover)] active:bg-[var(--whatsapp-green-hover)]",
         {
           "h-10 px-6 py-2 rounded-md text-sm": size === "default",
           "h-8 px-4 py-1 rounded-md text-xs": size === "sm",
           "h-12 px-8 py-3 rounded-md text-base": size === "lg",
-          "fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg z-50 hover:scale-110": isFloating,
+          "fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg z-50 hover:scale-110 active:scale-95 active:shadow-[0_0_25px_rgba(37,211,102,0.7)]": isFloating,
         },
         className
       )}
