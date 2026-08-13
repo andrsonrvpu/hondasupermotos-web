@@ -4,10 +4,22 @@ import { getFeaturedMotorcycles } from "@/data/motorcycles"
 import { MotorcycleCard } from "@/components/MotorcycleCard"
 import { motion } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 
 export function FeaturedMotorcycles() {
   const scrollRef = useRef<HTMLDivElement>(null)
+  const [activeIndex, setActiveIndex] = useState(0)
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return
+    const { scrollLeft, scrollWidth } = scrollRef.current
+    const items = getFeaturedMotorcycles()
+    const itemWidth = scrollWidth / items.length
+    const newIndex = Math.round(scrollLeft / itemWidth)
+    if (newIndex !== activeIndex) {
+      setActiveIndex(newIndex)
+    }
+  }
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
@@ -49,6 +61,7 @@ export function FeaturedMotorcycles() {
           
           <div 
             ref={scrollRef}
+            onScroll={handleScroll}
             className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 -mb-8 pt-4 -mt-4 scroll-smooth hide-scrollbar"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
@@ -74,6 +87,28 @@ export function FeaturedMotorcycles() {
           >
             <ChevronRight size={24} className="w-5 h-5 md:w-6 md:h-6" />
           </button>
+        </div>
+
+        {/* Mobile Pagination Dots */}
+        <div className="flex md:hidden justify-center items-center gap-2 mt-10">
+          {getFeaturedMotorcycles().map((_, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                if (scrollRef.current) {
+                  const items = getFeaturedMotorcycles()
+                  const itemWidth = scrollRef.current.scrollWidth / items.length
+                  scrollRef.current.scrollTo({ left: itemWidth * index, behavior: 'smooth' })
+                }
+              }}
+              aria-label={`Ir a la motocicleta ${index + 1}`}
+              className={`h-2.5 rounded-full transition-all duration-300 ${
+                activeIndex === index 
+                  ? "w-8 bg-[var(--honda-red)]" 
+                  : "w-2.5 bg-gray-300 active:bg-gray-400"
+              }`}
+            />
+          ))}
         </div>
       </div>
     </section>
