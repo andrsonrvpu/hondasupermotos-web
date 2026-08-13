@@ -28,7 +28,7 @@ export default function TerminosYCondicionesPage() {
         <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-4xl py-16">
           <div className="prose prose-lg prose-red max-w-none text-gray-700 space-y-8">
             
-            <section>
+            <section id="aceptacion-de-los-terminos" className="scroll-mt-32">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Aceptación de los Términos</h2>
               <p>
                 Al acceder y utilizar el sitio web oficial de Honda (en adelante, "el Sitio"), 
@@ -38,7 +38,7 @@ export default function TerminosYCondicionesPage() {
               </p>
             </section>
 
-            <section>
+            <section id="uso-del-sitio-web" className="scroll-mt-32">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Uso del Sitio Web</h2>
               <p>
                 El contenido de este Sitio, incluyendo pero no limitándose a textos, imágenes, logotipos, diseños, 
@@ -49,7 +49,7 @@ export default function TerminosYCondicionesPage() {
               </p>
             </section>
 
-            <section>
+            <section id="cotizaciones-y-precios" className="scroll-mt-32">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Cotizaciones y Precios</h2>
               <p>
                 Los precios de las motocicletas, accesorios, repuestos y servicios mostrados en este Sitio son referenciales, 
@@ -59,7 +59,7 @@ export default function TerminosYCondicionesPage() {
               </p>
             </section>
 
-            <section>
+            <section id="garantia-de-motocicletas" className="scroll-mt-32">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Garantía de Motocicletas</h2>
               <p>
                 Todas nuestras motocicletas nuevas cuentan con el respaldo y la garantía oficial de Honda. 
@@ -70,7 +70,7 @@ export default function TerminosYCondicionesPage() {
               </p>
             </section>
 
-            <section>
+            <section id="tratamiento-de-datos-personales" className="scroll-mt-32">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Tratamiento de Datos Personales (Habeas Data)</h2>
               <p>
                 En cumplimiento de la Ley 1581 de 2012 y el Decreto 1377 de 2013, le informamos que los datos personales 
@@ -89,7 +89,7 @@ export default function TerminosYCondicionesPage() {
               </p>
             </section>
 
-            <section>
+            <section id="campanas-y-actividades-promocionales" className="scroll-mt-32">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Campañas y Actividades Promocionales</h2>
               <p>
                 Cualquier concurso, sorteo, bono de descuento o actividad promocional publicada en el Sitio o en nuestras 
@@ -99,7 +99,7 @@ export default function TerminosYCondicionesPage() {
               </p>
             </section>
 
-            <section>
+            <section id="modificaciones-a-los-terminos" className="scroll-mt-32">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Modificaciones a los Términos</h2>
               <p>
                 Honda se reserva el derecho de modificar estos Términos y Condiciones en cualquier momento y 
@@ -109,7 +109,7 @@ export default function TerminosYCondicionesPage() {
               </p>
             </section>
 
-            <section>
+            <section id="ley-aplicable-y-jurisdiccion" className="scroll-mt-32">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Ley Aplicable y Jurisdicción</h2>
               <p>
                 Estos Términos y Condiciones se rigen por las leyes de la República de Colombia. Cualquier controversia 
