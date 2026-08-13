@@ -23,8 +23,20 @@ export function FeaturedMotorcycles() {
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
-      const scrollAmount = direction === 'left' ? -scrollRef.current.clientWidth : scrollRef.current.clientWidth
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
+      const items = getFeaturedMotorcycles()
+      const itemWidth = scrollRef.current.scrollWidth / items.length
+      const currentScroll = scrollRef.current.scrollLeft
+      const currentIndex = Math.round(currentScroll / itemWidth)
+      
+      // Determine how many items are visible on screen to scroll by that amount
+      // (1 on mobile, 2 on tablet, 3 on desktop)
+      const visibleItems = Math.round(scrollRef.current.clientWidth / itemWidth) || 1
+      let nextIndex = direction === 'left' ? currentIndex - visibleItems : currentIndex + visibleItems
+      
+      if (nextIndex < 0) nextIndex = 0
+      if (nextIndex >= items.length) nextIndex = items.length - 1
+      
+      scrollRef.current.scrollTo({ left: itemWidth * nextIndex, behavior: 'smooth' })
     }
   }
 
