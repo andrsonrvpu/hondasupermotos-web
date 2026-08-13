@@ -17,7 +17,7 @@ export function PromoBanner() {
               Aprovecha nuestros bonos especiales de descuento. Cupos limitados.
             </p>
             
-            <Button asChild variant="secondary" size="lg" className="bg-white text-[var(--honda-red)] hover:bg-gray-100 uppercase tracking-widest font-black transition-all duration-300 hover:scale-105 active:scale-95 hover:shadow-[0_0_30px_rgba(255,255,255,0.6)] cursor-pointer">
+            <Button asChild variant="secondary" size="lg" className="bg-white text-[var(--honda-red)] hover:bg-gray-100 active:bg-gray-100 uppercase tracking-widest font-black transition-all duration-300 hover:scale-105 active:scale-95 hover:shadow-[0_0_30px_rgba(255,255,255,0.6)] active:shadow-[0_0_30px_rgba(255,255,255,0.6)] cursor-pointer">
               <a href="https://wa.me/573173057943?text=Hola,%20vengo%20de%20la%20página%20web%20y%20me%20gustaría%20recibir%20información%20general." target="_blank" rel="noopener noreferrer">
                 Solicitar información <span className="ml-2">→</span>
               </a>
