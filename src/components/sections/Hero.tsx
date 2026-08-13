@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 
 export function Hero() {
   return (
-    <section className="relative w-full flex items-center justify-center md:justify-start overflow-hidden bg-gray-900 mt-[72px] py-10 md:py-20 min-h-[650px] md:min-h-screen">
+    <section className="relative w-full flex items-start md:items-center justify-center md:justify-start overflow-hidden bg-gray-900 mt-[72px] pt-8 pb-10 md:py-20 min-h-[650px] md:min-h-screen">
       {/* Background Image / Video Container */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <motion.div 
@@ -31,15 +31,15 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 to-black/20 md:from-black/80 md:via-black/50 md:to-transparent" />
       </div>
 
-      <div className="container relative z-10 mx-auto px-[18px] md:px-6 lg:px-8 flex flex-col items-center md:items-start text-center md:text-left">
-        <div className="w-full max-w-[350px] md:max-w-3xl flex flex-col items-center md:items-start mx-auto md:mx-0">
+      <div className="container relative z-10 mx-auto px-[18px] md:px-6 lg:px-8 flex flex-col items-center md:items-start text-center md:text-left h-full">
+        <div className="w-full max-w-[350px] md:max-w-3xl flex flex-col items-center md:items-start mx-auto md:mx-0 h-full">
           
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 md:px-5 md:py-2 mb-3 md:mb-6 mx-auto md:mx-0"
+            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 md:px-5 md:py-2 mb-auto md:mb-6 mt-2 md:mt-0 mx-auto md:mx-0"
           >
             <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-[var(--honda-red)] rounded-full animate-pulse"></span>
             <span className="text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.15em]">
@@ -52,7 +52,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-black text-white uppercase tracking-tighter mb-2 md:mb-4 italic leading-[1.1] drop-shadow-lg text-center md:text-left"
+            className="font-black text-white uppercase tracking-tighter mb-5 md:mb-4 mt-12 md:mt-0 italic leading-[1.1] drop-shadow-lg text-center md:text-left"
             style={{ fontSize: "clamp(2.5rem, 10vw, 4.5rem)" }}
           >
             EL PODER DE<br />
@@ -64,7 +64,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-[13px] leading-snug md:text-lg md:leading-relaxed text-gray-200 mb-5 md:mb-10 w-full max-w-[340px] md:max-w-lg font-medium drop-shadow-md line-clamp-3 md:line-clamp-none text-center md:text-left mx-auto md:mx-0"
+            className="text-[13px] leading-snug md:text-lg md:leading-relaxed text-gray-200 mb-8 md:mb-10 w-full max-w-[340px] md:max-w-lg font-medium drop-shadow-md line-clamp-3 md:line-clamp-none text-center md:text-left mx-auto md:mx-0"
           >
             Descubre las motocicletas Honda más innovadoras de 2027. Diseño, tecnología y rendimiento en perfecta armonía.
           </motion.p>
