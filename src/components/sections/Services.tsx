@@ -30,7 +30,7 @@ export function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group bg-white border border-gray-100 rounded-2xl p-6 md:p-8 hover:shadow-2xl hover:shadow-red-600/30 transition-all duration-300 hover:-translate-y-2 hover:border-[var(--honda-red)] active:scale-[0.98] cursor-pointer"
+                className="group bg-white border border-gray-100 rounded-2xl p-6 md:p-8 hover:shadow-2xl hover:shadow-red-600/30 transition-all duration-300 hover:-translate-y-2 hover:border-[var(--honda-red)] active:shadow-2xl active:shadow-red-600/30 active:-translate-y-2 active:border-[var(--honda-red)] active:scale-[0.98] cursor-pointer"
               >
                 <div className="w-14 h-14 bg-red-50 text-[var(--honda-red)] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Icon className="w-7 h-7" />
