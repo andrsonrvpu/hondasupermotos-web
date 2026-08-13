@@ -65,10 +65,10 @@ export function FeaturedMotorcycles() {
           {/* Left Button */}
           <button 
             onClick={() => scroll('left')}
-            className="absolute left-0 md:-left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-50 bg-white border border-gray-200 text-gray-800 p-2 md:p-3 rounded-full shadow-lg hover:bg-[var(--honda-red)] hover:text-white hover:border-[var(--honda-red)] hover:shadow-[0_0_30px_rgba(204,0,0,0.6)] active:bg-[var(--honda-red)] active:text-white active:border-[var(--honda-red)] active:shadow-[0_0_30px_rgba(204,0,0,0.6)] transition-all opacity-90 md:opacity-0 md:group-hover:opacity-100 flex hover:scale-110 active:scale-95 cursor-pointer"
+            className="absolute left-0 md:-left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-50 bg-white border border-gray-200 text-gray-800 p-3 md:p-4 rounded-full shadow-lg hover:bg-[var(--honda-red)] hover:text-white hover:border-[var(--honda-red)] hover:shadow-[0_0_30px_rgba(204,0,0,0.6)] active:bg-[var(--honda-red)] active:text-white active:border-[var(--honda-red)] active:shadow-[0_0_30px_rgba(204,0,0,0.6)] transition-all opacity-90 md:opacity-0 md:group-hover:opacity-100 flex hover:scale-110 active:scale-95 cursor-pointer"
             aria-label="Anterior"
           >
-            <ChevronLeft size={24} className="w-5 h-5 md:w-6 md:h-6" />
+            <ChevronLeft size={24} className="w-6 h-6 md:w-7 md:h-7" />
           </button>
           
           <div 
@@ -94,10 +94,10 @@ export function FeaturedMotorcycles() {
           {/* Right Button */}
           <button 
             onClick={() => scroll('right')}
-            className="absolute right-0 md:-right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-50 bg-white border border-gray-200 text-gray-800 p-2 md:p-3 rounded-full shadow-lg hover:bg-[var(--honda-red)] hover:text-white hover:border-[var(--honda-red)] hover:shadow-[0_0_30px_rgba(204,0,0,0.6)] active:bg-[var(--honda-red)] active:text-white active:border-[var(--honda-red)] active:shadow-[0_0_30px_rgba(204,0,0,0.6)] transition-all opacity-90 md:opacity-0 md:group-hover:opacity-100 flex hover:scale-110 active:scale-95 cursor-pointer"
+            className="absolute right-0 md:-right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-50 bg-white border border-gray-200 text-gray-800 p-3 md:p-4 rounded-full shadow-lg hover:bg-[var(--honda-red)] hover:text-white hover:border-[var(--honda-red)] hover:shadow-[0_0_30px_rgba(204,0,0,0.6)] active:bg-[var(--honda-red)] active:text-white active:border-[var(--honda-red)] active:shadow-[0_0_30px_rgba(204,0,0,0.6)] transition-all opacity-90 md:opacity-0 md:group-hover:opacity-100 flex hover:scale-110 active:scale-95 cursor-pointer"
             aria-label="Siguiente"
           >
-            <ChevronRight size={24} className="w-5 h-5 md:w-6 md:h-6" />
+            <ChevronRight size={24} className="w-6 h-6 md:w-7 md:h-7" />
           </button>
         </div>
 
