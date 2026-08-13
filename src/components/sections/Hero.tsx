@@ -79,14 +79,14 @@ export function Hero() {
             className="flex flex-col sm:flex-row w-full items-center justify-center md:justify-start gap-4 md:gap-4 mx-auto md:mx-0"
           >
             <Button 
-              className="w-full h-[56px] md:h-[60px] rounded-[28px] transition-all duration-300 hover:shadow-[0_0_30px_rgba(204,0,0,0.6)] cursor-pointer active:scale-95 text-[17px] md:text-lg font-bold bg-[#cc0000] hover:bg-[#a30000] text-white"
+              className="w-full h-[56px] md:h-[60px] rounded-[28px] transition-all duration-300 hover:shadow-[0_0_30px_rgba(204,0,0,0.6)] active:shadow-[0_0_30px_rgba(204,0,0,0.6)] cursor-pointer active:scale-95 text-[17px] md:text-lg font-bold bg-[#cc0000] hover:bg-[#a30000] active:bg-[#a30000] text-white"
               onClick={() => window.location.href = '/motos'}
             >
               Ver Modelos <span className="ml-2 font-normal">→</span>
             </Button>
           
             <WhatsAppButton 
-              className="w-full h-[56px] md:h-[60px] bg-transparent border-[1.5px] border-white hover:bg-white hover:text-[#25D366] rounded-[28px] transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.6)] active:scale-95 text-[17px] md:text-lg font-bold flex items-center justify-center !text-white hover:!text-[#25D366]" 
+              className="w-full h-[56px] md:h-[60px] bg-transparent border-[1.5px] border-white hover:bg-white active:bg-white hover:text-[#25D366] active:text-[#25D366] rounded-[28px] transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.6)] active:shadow-[0_0_30px_rgba(255,255,255,0.6)] active:scale-95 text-[17px] md:text-lg font-bold flex items-center justify-center !text-white hover:!text-[#25D366] active:!text-[#25D366]" 
               message="Hola, vengo de la página web y me gustaría recibir información general."
             />
           </motion.div>
