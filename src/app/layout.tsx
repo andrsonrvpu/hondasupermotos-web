@@ -21,11 +21,10 @@ export const viewport: import("next").Viewport = {
 
 export const metadata: Metadata = {
   title: "Comprar Honda Motos | Concesionario Oficial",
-  description: "Encuentra tu próxima motocicleta con nosotros. Servicio técnico especializado, repuestos originales, y la mejor asesoría en Bogotá, Cundinamarca y Boyacá.",
+  description: "Encuentra tu próxima motocicleta con nosotros. Servicio técnico especializado, repuestos originales, y la mejor asesoría en Manizales, Quindío y Risaralda.",
   keywords: [
-    "Motos", "Honda", "Comprar motos Honda", "Bogotá", "Cundinamarca", 
-    "Boyacá", "Meta", "Huila", "Tolima", "Caldas", 
-    "Concesionario Honda", "Supermotos", "Servicio Técnico"
+    "Motos", "Honda", "Comprar motos Honda", "Manizales", "Caldas", 
+    "Quindío", "Risaralda", "Concesionario Honda", "Supermotos", "Servicio Técnico"
   ],
   openGraph: {
     title: "Comprar Honda Motos | Concesionario Oficial",

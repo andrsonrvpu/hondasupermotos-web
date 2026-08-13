@@ -106,11 +106,11 @@ export function Footer() {
           <div>
             <h4 className="font-black text-gray-900 uppercase tracking-wide mb-6">Contacto</h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-gray-600">
+          <li className="flex items-start gap-3 text-gray-600">
                 <MapPin className="w-5 h-5 text-[var(--honda-red)] shrink-0 mt-0.5" />
                 <span>
                   <strong className="block text-gray-900">Sede Principal</strong>
-                  Bogotá, Colombia
+                  Manizales, Caldas
                 </span>
               </li>
               <li className="flex items-center gap-3 text-gray-600">
@@ -128,7 +128,7 @@ export function Footer() {
         {/* SEO Text Block */}
         <div className="border-t border-gray-100 pt-8 pb-4 text-xs text-gray-400 text-center max-w-4xl mx-auto">
           <p>
-            Venta de motos Honda nuevas. Encuentra tu motocicleta ideal tipo sport, scooter, todoterreno y Navi. Somos tu concesionario de confianza con servicio técnico especializado y distribución para la ciudad de Bogotá, todos los municipios del departamento de Cundinamarca, y departamentos limítrofes: Boyacá, Meta, Huila, Tolima y Caldas. Cotiza aquí tu nueva moto Honda y haz tus sueños realidad.
+            Venta de motos Honda nuevas. Encuentra tu motocicleta ideal tipo sport, scooter, todoterreno y Navi. Somos tu concesionario de confianza con servicio técnico especializado y sede principal en Manizales, con atención y distribución para Manizales, Quindío y Risaralda. Cotiza aquí tu nueva moto Honda y haz tus sueños realidad.
           </p>
         </div>
 

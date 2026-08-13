@@ -7,15 +7,15 @@ export function RegionalCoverage() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="max-w-2xl">
             <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tighter italic mb-4">
-              Venta de Motos Honda en <span className="text-[var(--honda-red)]">Bogotá y Región Central</span>
+              Venta de Motos Honda en <span className="text-[var(--honda-red)]">Manizales y el Eje Cafetero</span>
             </h2>
             <p className="text-gray-300">
-              Encuentra la motocicleta de tus sueños. Brindamos asesoría, ventas y despachos a todos los municipios de Cundinamarca y departamentos limítrofes, con sede principal en Bogotá.
+              Encuentra la motocicleta de tus sueños. Brindamos asesoría, ventas y despachos con sede principal en Manizales, y cobertura total para Quindío y Risaralda.
             </p>
           </div>
           
           <div className="flex flex-wrap gap-2 md:gap-4">
-            {["Bogotá D.C.", "Cundinamarca", "Boyacá", "Meta", "Huila", "Tolima", "Caldas"].map((region) => (
+            {["Manizales", "Quindío", "Risaralda"].map((region) => (
               <div 
                 key={region}
                 className="flex items-center gap-1 md:gap-2 bg-gray-800 border border-gray-700 px-4 py-2 md:px-6 md:py-3 rounded-full"
