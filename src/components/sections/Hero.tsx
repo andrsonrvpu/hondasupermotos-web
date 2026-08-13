@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 
 export function Hero() {
   return (
-    <section className="relative w-full flex items-center justify-start overflow-hidden bg-gray-900 mt-[72px] py-10 md:py-20 min-h-[650px] md:min-h-screen">
+    <section className="relative w-full flex items-start md:items-center justify-start overflow-hidden bg-gray-900 mt-[72px] pt-6 pb-10 md:py-20 min-h-[650px] md:min-h-screen">
       {/* Background Image / Video Container */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <motion.div 
