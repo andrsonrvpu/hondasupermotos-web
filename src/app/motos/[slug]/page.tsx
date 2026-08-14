@@ -9,6 +9,7 @@ import { Footer } from "@/components/sections/Footer";
 import { MotorcycleGallery } from "@/components/motorcycle/MotorcycleGallery";
 import { MotorcycleSpecs } from "@/components/motorcycle/MotorcycleSpecs";
 import { RelatedMotorcycles } from "@/components/motorcycle/RelatedMotorcycles";
+import { QuoteModal } from "@/components/motorcycle/QuoteModal";
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -101,12 +102,11 @@ export default async function MotorcyclePage({ params }: Props) {
                     </svg>
                     Contactar por WhatsApp
                   </a>
-                  <Link
-                    href={`/contacto?modelo=${motorcycle.slug}`}
-                    className="w-full flex items-center justify-center bg-[var(--honda-red)] text-white text-center font-bold uppercase text-sm py-4 px-6 rounded-lg transition-all duration-300 hover:bg-red-700 hover:-translate-y-1 hover:shadow-lg active:bg-red-700 active:-translate-y-1 active:shadow-lg"
-                  >
-                    Solicitar cotización
-                  </Link>
+                  <QuoteModal motorcycle={motorcycle}>
+                    <button className="w-full flex items-center justify-center bg-[var(--honda-red)] text-white text-center font-bold uppercase text-sm py-4 px-6 rounded-lg transition-all duration-300 hover:bg-red-700 hover:-translate-y-1 hover:shadow-lg active:bg-red-700 active:-translate-y-1 active:shadow-lg">
+                      Solicitar cotización
+                    </button>
+                  </QuoteModal>
                 </div>
 
                 {/* Highlights */}
@@ -147,12 +147,11 @@ export default async function MotorcyclePage({ params }: Props) {
                 </svg>
                 Contactar por WhatsApp
               </a>
-              <Link
-                href={`/contacto?modelo=${motorcycle.slug}`}
-                className="w-full sm:w-auto flex items-center justify-center bg-[var(--honda-red)] text-white font-bold uppercase text-sm py-4 px-8 rounded-lg transition-all duration-300 hover:bg-red-700 hover:-translate-y-1 hover:shadow-lg active:bg-red-700 active:-translate-y-1 active:shadow-lg"
-              >
-                Solicitar cotización
-              </Link>
+              <QuoteModal motorcycle={motorcycle}>
+                <button className="w-full sm:w-auto flex items-center justify-center bg-[var(--honda-red)] text-white font-bold uppercase text-sm py-4 px-8 rounded-lg transition-all duration-300 hover:bg-red-700 hover:-translate-y-1 hover:shadow-lg active:bg-red-700 active:-translate-y-1 active:shadow-lg">
+                  Solicitar cotización
+                </button>
+              </QuoteModal>
             </div>
           </div>
         </section>
