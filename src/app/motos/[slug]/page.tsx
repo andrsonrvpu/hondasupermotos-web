@@ -103,7 +103,7 @@ export default async function MotorcyclePage({ params }: Props) {
                     Contactar por WhatsApp
                   </a>
                   <QuoteModal motorcycle={motorcycle}>
-                    <button className="w-full flex items-center justify-center bg-[var(--honda-red)] text-white text-center font-bold uppercase text-sm py-4 px-6 rounded-lg transition-all duration-300 hover:bg-red-700 hover:-translate-y-1 hover:shadow-lg active:bg-red-700 active:-translate-y-1 active:shadow-lg">
+                    <button className="w-full flex items-center justify-center bg-[var(--honda-red)] text-white text-center font-bold uppercase text-sm py-4 px-6 rounded-lg transition-all duration-300 hover:bg-red-700 hover:-translate-y-1 hover:shadow-lg active:bg-red-700 active:-translate-y-1 active:shadow-lg cursor-pointer">
                       Solicitar cotización
                     </button>
                   </QuoteModal>
@@ -148,7 +148,7 @@ export default async function MotorcyclePage({ params }: Props) {
                 Contactar por WhatsApp
               </a>
               <QuoteModal motorcycle={motorcycle}>
-                <button className="w-full sm:w-auto flex items-center justify-center bg-[var(--honda-red)] text-white font-bold uppercase text-sm py-4 px-8 rounded-lg transition-all duration-300 hover:bg-red-700 hover:-translate-y-1 hover:shadow-lg active:bg-red-700 active:-translate-y-1 active:shadow-lg">
+                <button className="w-full sm:w-auto flex items-center justify-center bg-[var(--honda-red)] text-white font-bold uppercase text-sm py-4 px-8 rounded-lg transition-all duration-300 hover:bg-red-700 hover:-translate-y-1 hover:shadow-lg active:bg-red-700 active:-translate-y-1 active:shadow-lg cursor-pointer">
                   Solicitar cotización
                 </button>
               </QuoteModal>
