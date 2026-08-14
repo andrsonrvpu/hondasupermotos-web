@@ -21,7 +21,7 @@ export function Hero() {
     for (let i = 1; i <= totalFrames; i++) {
       const img = new window.Image()
       const num = i.toString().padStart(3, '0')
-      img.src = `/ezgif-5c3750d06975b4d7-jpg/ezgif-frame-${num}.jpg`
+      img.src = `/ezgif-8830cb8dcc6b8410-jpg/ezgif-frame-${num}.jpg`
       img.onload = () => { loaded++ }
       images.push(img)
     }
