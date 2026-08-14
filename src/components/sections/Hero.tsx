@@ -28,7 +28,7 @@ export function Hero() {
 
     let frame = 0
     let lastTime = 0
-    const fps = 24
+    const fps = 12
     const interval = 1000 / fps
     let animationFrameId: number
 
