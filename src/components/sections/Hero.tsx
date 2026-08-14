@@ -1,10 +1,88 @@
 "use client"
-import Image from "next/image"
+import { useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import { WhatsAppButton } from "@/components/WhatsAppButton"
 import { Button } from "@/components/ui/button"
 
 export function Hero() {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+
+    // Preload images
+    const totalFrames = 110
+    const images: HTMLImageElement[] = []
+    let loaded = 0
+    
+    for (let i = 1; i <= totalFrames; i++) {
+      const img = new window.Image()
+      const num = i.toString().padStart(3, '0')
+      img.src = `/ezgif-5c3750d06975b4d7-jpg/ezgif-frame-${num}.jpg`
+      img.onload = () => { loaded++ }
+      images.push(img)
+    }
+
+    let frame = 0
+    let lastTime = 0
+    const fps = 24
+    const interval = 1000 / fps
+    let animationFrameId: number
+
+    const resize = () => {
+      if (canvas) {
+        canvas.width = canvas.clientWidth
+        canvas.height = canvas.clientHeight
+      }
+    }
+    
+    window.addEventListener('resize', resize)
+    resize()
+
+    const draw = (time: number) => {
+      animationFrameId = requestAnimationFrame(draw)
+      
+      if (time - lastTime < interval) return
+      lastTime = time
+
+      // Only start drawing if at least some images are loaded
+      if (images[frame] && images[frame].complete) {
+        const img = images[frame]
+        
+        // Calculate object-cover dimensions
+        const canvasRatio = canvas.width / canvas.height
+        const imgRatio = img.width / img.height
+        let drawWidth = canvas.width
+        let drawHeight = canvas.height
+        let offsetX = 0
+        let offsetY = 0
+
+        if (canvasRatio > imgRatio) {
+          drawHeight = canvas.width / imgRatio
+          offsetY = (canvas.height - drawHeight) / 2
+        } else {
+          drawWidth = canvas.height * imgRatio
+          offsetX = (canvas.width - drawWidth) / 2
+        }
+        
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight)
+        
+        frame = (frame + 1) % totalFrames
+      }
+    }
+    
+    animationFrameId = requestAnimationFrame(draw)
+    
+    return () => {
+      cancelAnimationFrame(animationFrameId)
+      window.removeEventListener('resize', resize)
+    }
+  }, [])
+
   return (
     <section className="relative w-full flex items-start md:items-center justify-center md:justify-start overflow-hidden bg-gray-900 mt-[72px] pt-8 pb-10 md:py-20 min-h-[650px] md:min-h-screen">
       {/* Background Image / Video Container */}
@@ -15,16 +93,9 @@ export function Hero() {
           transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
           className="absolute inset-0 w-full h-full bg-[#111]"
         >
-          {/* 
-            Placeholder background prepared for future video/image. 
-            Removed the text placeholder to leave a clean dark background.
-          */}
-          <Image
-            src="https://placehold.co/1920x1080/111111/111111/png?text=%20"
-            alt="Hero Background"
-            fill
-            className="object-cover"
-            priority
+          <canvas
+            ref={canvasRef}
+            className="w-full h-full"
           />
         </motion.div>
         {/* Gradient Overlay: Darker on left, transparent on right */}
