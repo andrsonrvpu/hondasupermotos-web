@@ -2,8 +2,8 @@ import Link from "next/link"
 import { ShieldCheck, Wrench, Star, Award, TrendingUp, Handshake } from "lucide-react"
 
 export const metadata = {
-  title: "Sobre Nosotros | Honda Supermotos",
-  description: "Conoce más sobre Honda Supermotos, tu concesionario oficial de confianza. Nuestra historia, valores y por qué elegirnos para tu próxima motocicleta.",
+  title: "Sobre Nosotros | Honda",
+  description: "Conoce más sobre Honda, tu concesionario oficial de confianza. Nuestra historia, valores y por qué elegirnos para tu próxima motocicleta.",
 }
 
 export default function NosotrosPage() {
@@ -35,7 +35,7 @@ export default function NosotrosPage() {
             </h2>
             <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
               <p>
-                En <strong>Honda Supermotos</strong> llevamos años consolidándonos como el principal referente para los amantes de las motocicletas en la región. Nacimos con el propósito de acercar la tecnología, innovación y durabilidad que solo la marca líder a nivel mundial puede ofrecer.
+                En <strong>Honda</strong> llevamos años consolidándonos como el principal referente para los amantes de las motocicletas en la región. Nacimos con el propósito de acercar la tecnología, innovación y durabilidad que solo la marca líder a nivel mundial puede ofrecer.
               </p>
               <p>
                 Como <strong>distribuidores autorizados y oficiales</strong> de Honda, no solo vendemos vehículos; entregamos experiencias, seguridad y un respaldo absoluto a cada uno de nuestros clientes.
