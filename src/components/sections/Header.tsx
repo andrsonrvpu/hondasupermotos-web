@@ -174,7 +174,7 @@ export function Header() {
           {/* Actions */}
           <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
             <Link 
-              href="https://wa.me/573000000000?text=Hola,%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n"
+              href="/contacto"
               className="bg-[var(--honda-red)] text-white px-6 py-2.5 rounded-full text-xs lg:text-sm font-bold hover:bg-[var(--honda-red-hover)] transition-colors uppercase tracking-wide hover:shadow-lg hover:shadow-red-500/50 hover:scale-105"
             >
               Contáctanos
@@ -253,7 +253,8 @@ export function Header() {
             
             <div className="pt-4 pb-2">
               <Link 
-                href="https://wa.me/573000000000"
+                href="/contacto"
+                onClick={() => setMobileMenuOpen(false)}
                 className="bg-[var(--honda-red)] text-white text-center py-3 rounded-full font-bold uppercase flex justify-center w-full shadow-lg"
               >
                 Contáctanos
