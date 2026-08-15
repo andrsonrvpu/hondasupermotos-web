@@ -8,8 +8,8 @@ export const metadata = {
 
 // Datos de ejemplo (el usuario podrá editarlos luego)
 const contactData = {
-  phone: "+57 300 000 0000",
-  whatsappPhone: "573000000000",
+  phone: "+57 317 305 7943",
+  whatsappPhone: "573173057943",
   email: "info@hondasupermotos.com",
   address: "Bogotá, Colombia",
   hours: "Lunes a Viernes: 8:00 AM - 6:00 PM\nSábados: 9:00 AM - 2:00 PM",
