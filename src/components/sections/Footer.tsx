@@ -63,7 +63,8 @@ export function Footer() {
               {[
                 { label: "Motocicletas", href: "/motos" },
                 { label: "Servicios", href: "/#servicios" },
-                { label: "Contacto", href: "/#contacto" }
+                { label: "Nosotros", href: "/nosotros" },
+                { label: "Contacto", href: "/contacto" }
               ].map((link) => (
                 <li key={link.label}>
                   <Link 
@@ -135,9 +136,10 @@ export function Footer() {
         {/* Bottom */}
         <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500 font-medium">
           <p>© 2026 Honda. Todos los derechos reservados.</p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-end">
             <Link href="/politica-de-privacidad" className="hover:text-[var(--honda-red)] active:text-[var(--honda-red)] transition-colors">Política de Privacidad</Link>
             <Link href="/terminos-y-condiciones" className="hover:text-[var(--honda-red)] active:text-[var(--honda-red)] transition-colors">Términos y Condiciones</Link>
+            <Link href="/politica-cookies" className="hover:text-[var(--honda-red)] active:text-[var(--honda-red)] transition-colors">Política de Cookies</Link>
           </div>
         </div>
       </div>
