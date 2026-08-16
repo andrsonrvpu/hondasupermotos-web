@@ -56,7 +56,7 @@ export default function PoliticaCookiesPage() {
 
           <h2>6. Contacto</h2>
           <p>
-            Si tienes alguna pregunta sobre el uso de cookies en nuestro sitio web, por favor contáctanos a través de nuestra página de <a href="/contacto" className="text-[var(--honda-red)] font-bold hover:underline">Contacto</a> o enviando un correo a info@comprarhondamotos.com.
+            Si tienes alguna pregunta sobre el uso de cookies en nuestro sitio web, por favor contáctanos a través de nuestra página de <a href="/contacto" className="text-[var(--honda-red)] font-bold hover:underline">Contacto</a>.
           </p>
         </div>
       </section>

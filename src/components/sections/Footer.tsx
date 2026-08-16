@@ -2,7 +2,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { Globe, Camera, Video, Phone, Mail, MapPin } from "lucide-react"
+import { Globe, Camera, Video, Phone, MapPin } from "lucide-react"
 
 export function Footer() {
   const pathname = usePathname();
@@ -117,10 +117,6 @@ export function Footer() {
               <li className="flex items-center gap-3 text-gray-600">
                 <Phone className="w-5 h-5 text-[var(--honda-red)] shrink-0" />
                 <a href="https://wa.me/573173057943" target="_blank" rel="noopener noreferrer" data-event="click_whatsapp" data-context="footer" className="hover:text-[var(--honda-red)] active:text-[var(--honda-red)] transition-colors">WhatsApp: +57 317 305 7943</a>
-              </li>
-              <li className="flex items-center gap-3 text-gray-600">
-                <Mail className="w-5 h-5 text-[var(--honda-red)] shrink-0" />
-                <a href="mailto:info@honda.com" className="hover:text-[var(--honda-red)] active:text-[var(--honda-red)] transition-colors">info@honda.com</a>
               </li>
             </ul>
           </div>
