@@ -11,7 +11,6 @@ export const metadata = {
 const contactData = {
   phone: "+57 317 305 7943",
   whatsappPhone: "573173057943",
-  email: "info@hondasupermotos.com",
   address: "Manizales, Caldas",
   hours: "Lunes a Viernes: 8:00 AM - 6:00 PM\nSábados: 9:00 AM - 2:00 PM",
   facebookUrl: "https://facebook.com/hondasupermotos",
@@ -40,7 +39,7 @@ export default function ContactPage() {
 
       {/* Quick Contact Cards */}
       <section className="max-w-7xl mx-auto px-4 -mt-10 relative z-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Llamadas */}
           <a href={`tel:${contactData.phone.replace(/\s+/g, '')}`} data-event="click_phone" className="bg-white rounded-xl shadow-xl p-8 flex flex-col items-center text-center group hover:-translate-y-2 transition-all duration-300 border border-gray-100">
             <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-[var(--honda-red)] transition-colors duration-300">
@@ -60,16 +59,6 @@ export default function ContactPage() {
             <p className="text-gray-600 mb-4 text-sm">Escríbenos rápido y sin complicaciones.</p>
             <p className="text-lg font-bold text-[#25D366]">Chat Directo</p>
           </a>
-
-          {/* Email */}
-          <a href={`mailto:${contactData.email}`} className="bg-white rounded-xl shadow-xl p-8 flex flex-col items-center text-center group hover:-translate-y-2 transition-all duration-300 border border-gray-100">
-            <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-gray-900 transition-colors duration-300">
-              <Mail className="w-8 h-8 text-gray-900 group-hover:text-white transition-colors duration-300" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-2 uppercase">Correo</h3>
-            <p className="text-gray-600 mb-4 text-sm">Envíanos tus dudas o documentación.</p>
-            <p className="text-sm font-bold text-gray-900">{contactData.email}</p>
-          </a>
         </div>
       </section>
 
@@ -85,7 +74,7 @@ export default function ContactPage() {
               <p className="text-gray-600 text-sm">Déjanos tus datos y un asesor se pondrá en contacto contigo en breve para brindarte toda la información que necesites.</p>
             </div>
 
-            <ContactForm email={contactData.email} />
+            <ContactForm whatsappPhone={contactData.whatsappPhone} />
           </div>
 
           {/* Información de la Empresa */}

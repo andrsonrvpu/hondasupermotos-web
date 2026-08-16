@@ -5,68 +5,36 @@ import { Send } from "lucide-react";
 import { trackContactFormSubmit } from "@/lib/analytics";
 
 interface ContactFormProps {
-  email: string;
+  whatsappPhone: string;
 }
 
-export function ContactForm({ email }: ContactFormProps) {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+export function ContactForm({ whatsappPhone }: ContactFormProps) {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
     
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    try {
-      const response = await fetch(`https://formsubmit.co/ajax/${email}`, {
-        method: "POST",
-        headers: { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify(Object.fromEntries(formData)),
-      });
+    const name = formData.get('name') as string;
+    const phone = formData.get('phone') as string;
+    const email = formData.get('email') as string;
+    const moto = formData.get('motocicleta') as string;
+    const message = formData.get('message') as string;
 
-      if (response.ok) {
-        setIsSuccess(true);
-        form.reset();
-        
-        // ------------------------------------------------------------------
-        // IMPORTANTE: Disparamos la conversión SÓLO cuando el envío es exitoso
-        // ------------------------------------------------------------------
-        trackContactFormSubmit();
-      } else {
-        alert("Ocurrió un error al enviar el formulario. Intenta nuevamente.");
-      }
-    } catch (error) {
-      alert("Ocurrió un error de conexión.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    const text = `*Nuevo contacto desde la web* 🏍️\n\n*Nombre:* ${name}\n*Teléfono:* ${phone}\n*Correo:* ${email}\n*Moto de Interés:* ${moto || 'No especificada'}\n*Mensaje:* ${message}`;
+
+    // Disparamos la conversión
+    trackContactFormSubmit();
+
+    // Redirigir a WhatsApp
+    window.open(`https://wa.me/${whatsappPhone}?text=${encodeURIComponent(text)}`, '_blank');
+
+    // Limpiar formulario
+    form.reset();
   };
-
-  if (isSuccess) {
-    return (
-      <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center">
-        <h3 className="text-2xl font-bold text-green-800 mb-2">¡Mensaje Enviado!</h3>
-        <p className="text-green-700">Gracias por escribirnos. Un asesor se pondrá en contacto contigo muy pronto.</p>
-        <button 
-          onClick={() => setIsSuccess(false)}
-          className="mt-6 text-sm font-bold uppercase text-green-700 hover:underline"
-        >
-          Enviar otro mensaje
-        </button>
-      </div>
-    );
-  }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      {/* Ocultos para FormSubmit */}
-      <input type="hidden" name="_subject" value="Nuevo contacto desde la página web" />
-      <input type="hidden" name="_captcha" value="false" />
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
@@ -96,11 +64,10 @@ export function ContactForm({ email }: ContactFormProps) {
 
       <button 
         type="submit" 
-        disabled={isSubmitting}
-        className="w-full flex items-center justify-center gap-2 bg-[var(--honda-red)] hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold uppercase py-4 px-6 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+        className="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-green-600 text-white font-bold uppercase py-4 px-6 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
       >
         <Send className="w-5 h-5" />
-        {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
+        Enviar por WhatsApp
       </button>
     </form>
   );
