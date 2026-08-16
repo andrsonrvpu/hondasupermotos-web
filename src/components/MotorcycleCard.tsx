@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import type { Motorcycle } from "@/data/motorcycles";
+import { trackWhatsappClick, trackMotorcycleClick } from "@/lib/analytics";
 
 interface MotorcycleCardProps {
   motorcycle: Motorcycle;
@@ -85,7 +86,12 @@ export function MotorcycleCard({ motorcycle, className }: MotorcycleCardProps) {
           )}
 
           {/* Invisible Link covering the card */}
-          <Link href={`/motos/${motorcycle.slug}`} className="absolute inset-0 z-40" aria-label={`Ver detalles de ${motorcycle.name}`} />
+          <Link 
+            href={`/motos/${motorcycle.slug}`} 
+            className="absolute inset-0 z-40" 
+            aria-label={`Ver detalles de ${motorcycle.name}`} 
+            onClick={() => trackMotorcycleClick(motorcycle.name)}
+          />
 
           {/* Actions */}
           <div className="mt-auto flex gap-2 relative z-50">
@@ -93,6 +99,7 @@ export function MotorcycleCard({ motorcycle, className }: MotorcycleCardProps) {
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
+                trackWhatsappClick("motorcycle_card_consultar");
                 const whatsappUrl = `https://wa.me/573173057943?text=${encodeURIComponent(motorcycle.whatsappMessage || `Hola! Me interesa la ${motorcycle.name}`)}`;
                 window.open(whatsappUrl, '_blank');
               }}

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { X, Calculator, Send, Info } from "lucide-react";
+import { trackQuoteRequest } from "@/lib/analytics";
 
 interface QuoteModalProps {
   children: React.ReactNode;
@@ -105,6 +106,9 @@ export function QuoteModal({ children, motorcycle }: QuoteModalProps) {
     }
 
     message += `¿Me podrían ayudar con la cotización formal?`;
+
+    // Analytics Tracking
+    trackQuoteRequest(motorcycle.name, paymentMethod);
 
     const waLink = `https://wa.me/573173057943?text=${encodeURIComponent(message)}`;
     window.open(waLink, "_blank");

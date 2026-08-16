@@ -1,5 +1,6 @@
 import { Phone, MessageCircle, Mail, MapPin, Clock, Send } from "lucide-react"
 import Link from "next/link"
+import { ContactForm } from "./ContactForm"
 
 export const metadata = {
   title: "Contacto | Honda Supermotos",
@@ -11,7 +12,7 @@ const contactData = {
   phone: "+57 317 305 7943",
   whatsappPhone: "573173057943",
   email: "info@hondasupermotos.com",
-  address: "Bogotá, Colombia",
+  address: "Manizales, Caldas",
   hours: "Lunes a Viernes: 8:00 AM - 6:00 PM\nSábados: 9:00 AM - 2:00 PM",
   facebookUrl: "https://facebook.com/hondasupermotos",
   instagramUrl: "https://instagram.com/hondasupermotos"
@@ -41,7 +42,7 @@ export default function ContactPage() {
       <section className="max-w-7xl mx-auto px-4 -mt-10 relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Llamadas */}
-          <a href={`tel:${contactData.phone.replace(/\s+/g, '')}`} className="bg-white rounded-xl shadow-xl p-8 flex flex-col items-center text-center group hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+          <a href={`tel:${contactData.phone.replace(/\s+/g, '')}`} data-event="click_phone" className="bg-white rounded-xl shadow-xl p-8 flex flex-col items-center text-center group hover:-translate-y-2 transition-all duration-300 border border-gray-100">
             <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-[var(--honda-red)] transition-colors duration-300">
               <Phone className="w-8 h-8 text-[var(--honda-red)] group-hover:text-white transition-colors duration-300" />
             </div>
@@ -51,7 +52,7 @@ export default function ContactPage() {
           </a>
 
           {/* WhatsApp */}
-          <a href={`https://wa.me/${contactData.whatsappPhone}?text=Hola,%20quisiera%20solicitar%20información%20sobre%20una%20motocicleta.`} target="_blank" rel="noopener noreferrer" className="bg-white rounded-xl shadow-xl p-8 flex flex-col items-center text-center group hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+          <a href={`https://wa.me/${contactData.whatsappPhone}?text=Hola,%20quisiera%20solicitar%20información%20sobre%20una%20motocicleta.`} data-event="click_whatsapp" data-context="contact_page" target="_blank" rel="noopener noreferrer" className="bg-white rounded-xl shadow-xl p-8 flex flex-col items-center text-center group hover:-translate-y-2 transition-all duration-300 border border-gray-100">
             <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-[#25D366] transition-colors duration-300">
               <MessageCircle className="w-8 h-8 text-[#25D366] group-hover:text-white transition-colors duration-300" />
             </div>
@@ -84,42 +85,7 @@ export default function ContactPage() {
               <p className="text-gray-600 text-sm">Déjanos tus datos y un asesor se pondrá en contacto contigo en breve para brindarte toda la información que necesites.</p>
             </div>
 
-            <form action={`https://formsubmit.co/${contactData.email}`} method="POST" className="space-y-6">
-              {/* Ocultos para FormSubmit si el usuario decide usar este servicio, si no, se puede borrar */}
-              <input type="hidden" name="_subject" value="Nuevo contacto desde la página web" />
-              <input type="hidden" name="_captcha" value="false" />
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="block text-sm font-bold text-gray-700 uppercase">Nombre Completo</label>
-                  <input type="text" id="name" name="name" required className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[var(--honda-red)] focus:border-transparent outline-none transition-all" placeholder="Juan Pérez" />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="phone" className="block text-sm font-bold text-gray-700 uppercase">Teléfono / Celular</label>
-                  <input type="tel" id="phone" name="phone" required className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[var(--honda-red)] focus:border-transparent outline-none transition-all" placeholder="300 123 4567" />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="email" className="block text-sm font-bold text-gray-700 uppercase">Correo Electrónico</label>
-                <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[var(--honda-red)] focus:border-transparent outline-none transition-all" placeholder="juan@correo.com" />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="motocicleta" className="block text-sm font-bold text-gray-700 uppercase">¿Moto de Interés? (Opcional)</label>
-                <input type="text" id="motocicleta" name="motocicleta" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[var(--honda-red)] focus:border-transparent outline-none transition-all" placeholder="Ej: CB 100, Navi..." />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="message" className="block text-sm font-bold text-gray-700 uppercase">Mensaje</label>
-                <textarea id="message" name="message" rows={4} required className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[var(--honda-red)] focus:border-transparent outline-none transition-all resize-none" placeholder="Escribe tu consulta aquí..."></textarea>
-              </div>
-
-              <button type="submit" className="w-full flex items-center justify-center gap-2 bg-[var(--honda-red)] hover:bg-red-700 text-white font-bold uppercase py-4 px-6 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <Send className="w-5 h-5" />
-                Enviar Mensaje
-              </button>
-            </form>
+            <ContactForm email={contactData.email} />
           </div>
 
           {/* Información de la Empresa */}
@@ -167,7 +133,7 @@ export default function ContactPage() {
               {/* Aquí se puede reemplazar por un iframe de Google Maps real cuando el cliente pase la URL */}
               <div className="absolute inset-0 z-0">
                  <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254508.51141489705!2d-74.2478938!3d4.6482975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9bfd2da6cb29%3A0x239d63ce97e9a152!2sBogot%C3%A1%2C%20Colombia!5e0!3m2!1ses!2sus!4v1714498835824!5m2!1ses!2sus" 
+                  src="https://maps.google.com/maps?q=Manizales,Caldas&t=&z=13&ie=UTF8&iwloc=&output=embed" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 

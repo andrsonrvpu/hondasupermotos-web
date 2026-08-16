@@ -24,6 +24,8 @@ export function WhatsAppButton({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
+      data-event="click_whatsapp"
+      data-context={isFloating ? "floating_button" : "inline_button"}
       className={cn(
         "inline-flex items-center justify-center font-bold text-white transition-all cursor-pointer",
         "bg-[var(--whatsapp-green)] hover:bg-[var(--whatsapp-green-hover)] active:bg-[var(--whatsapp-green-hover)]",
