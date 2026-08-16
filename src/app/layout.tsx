@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   description: "Encuentra tu próxima motocicleta con nosotros. Servicio técnico especializado, repuestos originales, y la mejor asesoría en Manizales, Quindío y Risaralda.",
   keywords: [
     "Motos", "Honda", "Comprar motos Honda", "Manizales", "Caldas", 
-    "Quindío", "Risaralda", "Concesionario Honda", "Supermotos", "Servicio Técnico"
+    "Quindío", "Risaralda", "Concesionario Honda", "Comprar Motos", "Servicio Técnico"
   ],
   openGraph: {
     title: "Comprar Honda Motos | Concesionario Oficial",

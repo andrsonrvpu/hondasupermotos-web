@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Política de Cookies | Honda Supermotos",
+  title: "Política de Cookies | Honda Motos",
   description: "Conoce nuestra política de cookies y cómo manejamos tu información al navegar por nuestra página web.",
 }
 
@@ -26,7 +26,7 @@ export default function PoliticaCookiesPage() {
 
           <h2>2. ¿Cómo utilizamos las cookies?</h2>
           <p>
-            En <strong>Honda Supermotos</strong> utilizamos cookies para mejorar tu experiencia de navegación, ofrecerte contenido y anuncios personalizados, proporcionar funciones de redes sociales y analizar nuestro tráfico.
+            En <strong>Comprar Honda Motos</strong> utilizamos cookies para mejorar tu experiencia de navegación, ofrecerte contenido y anuncios personalizados, proporcionar funciones de redes sociales y analizar nuestro tráfico.
           </p>
           <p>Los tipos de cookies que utilizamos incluyen:</p>
           <ul>
@@ -56,7 +56,7 @@ export default function PoliticaCookiesPage() {
 
           <h2>6. Contacto</h2>
           <p>
-            Si tienes alguna pregunta sobre el uso de cookies en nuestro sitio web, por favor contáctanos a través de nuestra página de <a href="/contacto" className="text-[var(--honda-red)] font-bold hover:underline">Contacto</a> o enviando un correo a info@hondasupermotos.com.
+            Si tienes alguna pregunta sobre el uso de cookies en nuestro sitio web, por favor contáctanos a través de nuestra página de <a href="/contacto" className="text-[var(--honda-red)] font-bold hover:underline">Contacto</a> o enviando un correo a info@comprarhondamotos.com.
           </p>
         </div>
       </section>

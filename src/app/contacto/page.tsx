@@ -3,8 +3,8 @@ import Link from "next/link"
 import { ContactForm } from "./ContactForm"
 
 export const metadata = {
-  title: "Contacto | Honda Supermotos",
-  description: "Ponte en contacto con Honda Supermotos. Solicita información sobre una motocicleta, agenda una cita o resuelve tus dudas.",
+  title: "Contacto | Honda Motos",
+  description: "Ponte en contacto con Honda Motos. Solicita información sobre una motocicleta, agenda una cita o resuelve tus dudas.",
 }
 
 // Datos de ejemplo (el usuario podrá editarlos luego)
@@ -13,8 +13,8 @@ const contactData = {
   whatsappPhone: "573173057943",
   address: "Manizales, Caldas",
   hours: "Lunes a Viernes: 8:00 AM - 6:00 PM\nSábados: 9:00 AM - 2:00 PM",
-  facebookUrl: "https://facebook.com/hondasupermotos",
-  instagramUrl: "https://instagram.com/hondasupermotos"
+  facebookUrl: "https://facebook.com/comprarhondamotos",
+  instagramUrl: "https://instagram.com/comprarhondamotos"
 }
 
 export default function ContactPage() {
